@@ -5,6 +5,7 @@ import { ApolloFederationDriver, ApolloFederationDriverConfig } from "@nestjs/ap
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { PrismaService } from "../../../prisma/Prisma.service";
+import { UsersResolver } from "./user.resolver";
 
 @Module({
   imports: [
@@ -16,6 +17,6 @@ import { PrismaService } from "../../../prisma/Prisma.service";
     }),
   ],
   controllers: [],
-  providers: [UsersService, ConfigService, JwtService, PrismaService],
+  providers: [UsersService, ConfigService, JwtService, PrismaService, UsersResolver],
 })
 export class UsersModule {}
